@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from './page.module.css'
 import Typewriter from 'typewriter-effect';
+import Link from 'next/link';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -13,9 +14,9 @@ export default function Home() {
           AiScripter
         </p>
         <div>
-          <a href='/app' type="button" style={{ fontFamily: 'var(--font-mono)', width: 200 }} className="text-center bg-gradient-to-r from-cyan-500 to-indigo-500 rounded-full px-2 py-2 text-white">
+          <Link href='/app' type="button" style={{ fontFamily: 'var(--font-mono)', width: 200 }} className="text-center bg-gradient-to-r from-cyan-500 to-indigo-500 rounded-full px-2 py-2 text-white">
             Try for free
-          </a>
+          </Link>
         </div>
       </div>
 
@@ -59,9 +60,9 @@ export default function Home() {
             Create short videos 30-sec to 60-sec scripts in 1 minutes!
           </div>
           <div className={styles.button}>
-            <a href='/app' style={{ fontFamily: 'var(--font-mono)', width: 200 }} id='button' type="button" className=" text-center bg-gradient-to-r from-cyan-500 to-indigo-500 rounded-full px-2 py-2 text-white">
+            <Link href='/app' style={{ fontFamily: 'var(--font-mono)', width: 200 }} id='button' type="button" className=" text-center bg-gradient-to-r from-cyan-500 to-indigo-500 rounded-full px-2 py-2 text-white">
               Try for free
-            </a>
+            </Link>
           </div>
           <div className='flex flex-row'>
             <div className='basis-1/1 mt-4'>
@@ -129,9 +130,9 @@ export default function Home() {
           short video scripts for FREE!
         </div>
         <div className='w-100 flex justify-center mt-4'>
-          <a href='/app' style={{ fontFamily: 'var(--font-mono)', width: 200 }} id='button' type="button" className="text-center bg-white rounded-full px-2 py-2 text-indigo-500">
+          <Link href='/app' style={{ fontFamily: 'var(--font-mono)', width: 200 }} id='button' type="button" className="text-center bg-white rounded-full px-2 py-2 text-indigo-500">
             Try for free
-          </a>
+          </Link>
         </div>
         <div className='mt-4'>
           <ul style={{ fontSize: 11 }}>

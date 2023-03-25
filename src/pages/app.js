@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styles from './page.module.css'
 import Typewriter from 'typewriter-effect';
 import { authorization } from '../../helpers';
+import Link from 'next/link';
 
 const jwt_token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdpYnJpbGxvbmdtZW5lQGdtYWlsLmNvbSIsInJvbGUiOiJjZW9haXNyaXB0ZXIiLCJpYXQiOjE2Nzk3MTA3NjB9.P39KZxO6Dl6rdRhnEqNgnnGeIDcKfkRHL605x-IwGqw';
 
@@ -64,9 +65,9 @@ export default function Application() {
     <main className={styles.main} style={{ padding: 0 }}>
       <div className={styles.description} style={{ borderBottom: '1px solid gray' }}>
         <p className="text-3xl font-bold text-indigo-500" style={{ cursor: 'pointer' }}>
-          <a href='/'>
+          <Link href='/'>
             AiScripter
-          </a>
+          </Link>
         </p>
         <div>
           <button type="button" style={{ fontFamily: 'var(--font-mono)', width: 200 }} className="bg-gradient-to-r from-cyan-500 to-indigo-500 rounded-full px-2 py-2 text-white">
