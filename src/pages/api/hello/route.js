@@ -32,8 +32,8 @@ const handler = async(req, res) => {
         res.status(400).json({ text: "No prompt provided.", success: false });
       }
     default:
-      let token = generateJWT();
-      res.status(200).json({ message: token,  success: true})
+      // let token = generateJWT();
+      res.status(200).json({ message: 'token',  success: true})
   }
 }
 

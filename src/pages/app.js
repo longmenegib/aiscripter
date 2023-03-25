@@ -4,7 +4,7 @@ import Typewriter from 'typewriter-effect';
 import { authorization } from '../../helpers';
 import Link from 'next/link';
 
-const jwt_token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdpYnJpbGxvbmdtZW5lQGdtYWlsLmNvbSIsInJvbGUiOiJjZW9haXNyaXB0ZXIiLCJpYXQiOjE2Nzk3MTA3NjB9.P39KZxO6Dl6rdRhnEqNgnnGeIDcKfkRHL605x-IwGqw';
+const jwt_token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdpYnJpbGxvbmdtZW5lQGdtYWlsLmNvbSIsInJvbGUiOiJjZW9haXNyaXB0ZXIiLCJpYXQiOjE2Nzk3NDI0NzJ9.M3aaydwkof28JhCBaq7ziXD_vDxcqadpruAc3uwolpw';
 
 
 const requestFormat = (title, desc, dur, lan, keywords, type) => {
