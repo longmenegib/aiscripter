@@ -13,7 +13,7 @@ const handler = async(req, res) => {
   
   switch (requestMethod) {
     case 'POST':
-      await authenticate(req, res);
+      // await authenticate(req, res);
       if (req.body.prompt !== undefined) {
         // const completion = await openai.createCompletion({
         //   model: "text-davinci-003",
