@@ -70,15 +70,15 @@ export default function Application() {
           </Link>
         </p>
         <div className='flex'>
-        <a href="https://www.producthunt.com/posts/aiscripter?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-aiscripter" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385784&theme=neutral" alt="AIScripter - Artificial&#0032;intelligence&#0044;&#0032;chatgpt&#0044;&#0032;social&#0032;media&#0044;&#0032;videos | Product Hunt"  width="250" height="54" /></a>
-          <button type="button" style={{ fontFamily: 'var(--font-mono)', width: 200 }} className="bg-gradient-to-r from-cyan-500 to-indigo-500 rounded-full px-2 py-2 text-white">
+        {/* <a href="https://www.producthunt.com/posts/aiscripter?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-aiscripter" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385784&theme=neutral" alt="AIScripter - Artificial&#0032;intelligence&#0044;&#0032;chatgpt&#0044;&#0032;social&#0032;media&#0044;&#0032;videos | Product Hunt"  width="250" height="54" /></a> */}
+          <button type="button" style={{ fontFamily: 'var(--font-mono)', width: 160 }} className="bg-gradient-to-r from-cyan-500 to-indigo-500 rounded-full px-2 py-2 text-white">
             Upgrade to plus
           </button>
         </div>
       </div>
-      <div className="flex flex-row text-indigo-700 " style={{ padding: 10 }}>
-        <div className="basis-1/4 shadow-lg" style={{ height: '100vh' }}>
-          <div className='row my-5'>
+      <div className="md:columns lg:flex text-indigo-700 " style={{ padding: 10 }}>
+        <div className="md:basis-1/1 lg:basis-1/4 shadow-lg h-full">
+          <div className='row mb-5'>
             <div className="columns-1  px-2">
               <label className='w-full'>
                 Video title *
@@ -197,8 +197,8 @@ export default function Application() {
             </button>
           </div>
         </div>
-        <div className="basis-3/4" style={{ minHeight: '100vh', backgroundColor: 'white', padding: 10 }}>
-          <div className={styles.generate} style={{ height: '100%', width: '100%', padding: 10 }}>
+        <div className="md:basis-1/1 lg:basis-3/4 lg:h-full" style={{ minHeight: 500, backgroundColor: 'white', padding: 10 }}>
+          <div className={styles.generate} style={{ minHeight: 500, width: '100%', padding: 10 }}>
             {!loading ?
               <div>
                 {status ?
