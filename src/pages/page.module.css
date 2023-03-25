@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Righteous&family=Roboto:wght@500&display=swap');
+
+
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* align-items: center; */
+  padding: 6rem;
+  padding-top: 20px;
+  min-height: 100vh;
+}
+
+.description {
+  display: inherit;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  /* max-width: var(--max-width); */
+  width: 100%;
+  z-index: 2;
+  font-family: var(--font-mono);
+}
+
+.generate{
+  background-color: rgb(215,220,221);
+}
+
+.description p {
+  position: relative;
+  margin: 0;
+  padding: 1rem;
+  background-color: rgba(var(--callout-rgb), 0.5);
+  border: 1px solid rgba(var(--callout-border-rgb), 0.3);
+  border-radius: var(--border-radius);
+}
+
+.slideText{
+  font-family: 'Abril Fatface', cursive;
+  font-family: 'Righteous', cursive;
+font-family: 'Roboto', sans-serif;
+}
+
+.code {
+  font-weight: 700;
+  font-family: var(--font-mono);
+}
+
+.button {
+  font-family: var(--font-mono);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(33%, auto));
+  width: var(--max-width);
+  max-width: 100%;
+  justify-content: space-between;
+}
+
+.card {
+  padding: 1rem 1.2rem;
+  border-radius: var(--border-radius);
+  /* background: rgba(var(--card-rgb), 0); */
+  background-image: linear-gradient(to right, #10aeb9, #3b82f6);
+  border: 1px solid rgba(var(--card-border-rgb), 0);
+  transition: background 200ms, border 200ms;
+  color: #fff;
+}
+
+.cardbig{
+  padding: 2rem 1.2rem;
+  border-radius: var(--border-radius);
+  /* background: rgba(var(--card-rgb), 0); */
+  background-image: linear-gradient(to right, #10aeb9, #3b82f6);
+  border: 1px solid rgba(var(--card-border-rgb), 0);
+  transition: background 200ms, border 200ms;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.card span {
+  display: inline-block;
+  transition: transform 200ms;
+}
+
+.card h2 {
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+}
+
+.card p {
+  margin: 0;
+  opacity: 0.6;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  max-width: 34ch;
+}
+
+
+@keyframes rotate {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
