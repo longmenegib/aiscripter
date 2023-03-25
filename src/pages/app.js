@@ -86,7 +86,7 @@ export default function Application() {
               <div className="form-group icon_form w-full" >
                 <input
                   type="text"
-                  className="shadow-lg require w-full rounded-2 px-2 text-indigo-500"
+                  className="shadow-lg require w-full rounded-2 px-2 text-indigo-500 bg-white-200"
                   name="google_maps_links"
                   placeholder="Insert video title"
                   style={{ height: 40, outline: 'none' }}
@@ -103,7 +103,7 @@ export default function Application() {
               <div className="form-group icon_form w-full" >
                 <textarea
                   type="text"
-                  className="shadow-lg require w-full rounded-2 px-2 text-indigo-500 "
+                  className="shadow-lg require w-full rounded-2 px-2 text-indigo-500  bg-white-200"
                   name="google_maps_links"
                   placeholder="Provide a brief description of the video's content"
                   style={{ outline: 'none' }}
@@ -120,7 +120,7 @@ export default function Application() {
               <div className="form-group icon_form w-full" >
                 <textarea
                   type="text"
-                  className="form-control shadow-lg require w-full rounded-2 px-2 text-indigo-500"
+                  className="form-control shadow-lg require w-full rounded-2 px-2 text-indigo-500 bg-white-200"
                   name="google_maps_links"
                   placeholder="List any keywords or topics that you want the script to cover."
                   style={{ outline: 'none' }}
