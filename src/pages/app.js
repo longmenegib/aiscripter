@@ -66,10 +66,11 @@ export default function Application() {
       <div className={styles.description} style={{ borderBottom: '1px solid gray' }}>
         <p className="text-3xl font-bold text-indigo-500" style={{ cursor: 'pointer' }}>
           <Link href='/'>
-            AiScripter
+            <img src='/logo.svg' width={200}/>
           </Link>
         </p>
-        <div>
+        <div className='flex'>
+        <a href="https://www.producthunt.com/posts/aiscripter?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-aiscripter" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385784&theme=neutral" alt="AIScripter - Artificial&#0032;intelligence&#0044;&#0032;chatgpt&#0044;&#0032;social&#0032;media&#0044;&#0032;videos | Product Hunt"  width="250" height="54" /></a>
           <button type="button" style={{ fontFamily: 'var(--font-mono)', width: 200 }} className="bg-gradient-to-r from-cyan-500 to-indigo-500 rounded-full px-2 py-2 text-white">
             Upgrade to plus
           </button>

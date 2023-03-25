@@ -10,11 +10,10 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.description}>
-        <p className="text-3xl font-bold text-indigo-500" style={{ cursor: 'pointer' }}>
-          AiScripter
-        </p>
-        <div>
-          <Link href='/app' type="button" style={{ fontFamily: 'var(--font-mono)', width: 200 }} className="text-center bg-gradient-to-r from-cyan-500 to-indigo-500 rounded-full px-2 py-2 text-white">
+        <img src='/logo.svg' width={200}/>
+        <div className='flex'>
+        <a href="https://www.producthunt.com/posts/aiscripter?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-aiscripter" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385784&theme=neutral" alt="AIScripter - Artificial&#0032;intelligence&#0044;&#0032;chatgpt&#0044;&#0032;social&#0032;media&#0044;&#0032;videos | Product Hunt"  width="250" height="54" /></a>
+          <Link href='/app' type="button" style={{ fontFamily: 'var(--font-mono)', width: 200, }} className=" flex items-center justify-center text-center bg-gradient-to-r from-cyan-500 to-indigo-500 rounded-full px-2 text-white">
             Try for free
           </Link>
         </div>

@@ -11,8 +11,11 @@ export default function RootLayout({ Component, pageProps }) {
   return (
     <>
       <Head>
+        <title>AIScripter</title>
         <meta name="title" content="AiScripter" />
         <meta name="description" content="Generate script for your video automatically" />
+        {/* <link rel = "icon" href= "/logo.svg" 
+        type = "image/x-icon"></link> */}
       </Head>
       <Component {...pageProps} />
     </>
