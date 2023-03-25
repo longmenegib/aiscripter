@@ -40,7 +40,7 @@ export default function Application() {
     if (!title || !description || !keywords || !language || !duration || !type) return;
 
     let formatText = requestFormat(title, description, duration, language, keywords, type);
-    console.log(formatText);
+    // console.log(formatText);
     // return
     setLoading(true)
     const response = await fetch("/api/hello/route", {
@@ -98,7 +98,7 @@ export default function Application() {
           <div className='row my-5'>
             <div className="columns-1  px-2">
               <label className='w-full'>
-                Short video description (optional)
+                Short video description *
               </label>
               <div className="form-group icon_form w-full" >
                 <textarea
@@ -115,7 +115,7 @@ export default function Application() {
           <div className='row my-5'>
             <div className="columns-1  px-2">
               <label className='w-full'>
-                Keywords, tags (optional)
+                Keywords, tags *
               </label>
               <div className="form-group icon_form w-full" >
                 <textarea

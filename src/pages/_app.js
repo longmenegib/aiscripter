@@ -7,7 +7,7 @@ export const metadata = {
 }
 
 export default function RootLayout({ Component, pageProps }) {
-  console.log('helloo')
+  
   return (
     <>
       <Head>
