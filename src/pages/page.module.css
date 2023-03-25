@@ -51,14 +51,6 @@ font-family: 'Roboto', sans-serif;
   font-family: var(--font-mono);
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(33%, auto));
-  width: var(--max-width);
-  max-width: 100%;
-  justify-content: space-between;
-}
-
 .card {
   padding: 1rem 1.2rem;
   border-radius: var(--border-radius);
@@ -67,6 +59,7 @@ font-family: 'Roboto', sans-serif;
   border: 1px solid rgba(var(--card-border-rgb), 0);
   transition: background 200ms, border 200ms;
   color: #fff;
+  min-height: 200px;
 }
 
 .cardbig{
@@ -108,5 +101,12 @@ font-family: 'Roboto', sans-serif;
   }
   to {
     transform: rotate(0deg);
+  }
+}
+
+
+@media (max-width: 992px) {
+  .main{
+    padding: 10px;
   }
 }

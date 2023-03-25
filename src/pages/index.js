@@ -13,17 +13,17 @@ export default function Home() {
         <img src='/logo.svg' width={200}/>
         <div className='flex'>
         <a href="https://www.producthunt.com/posts/aiscripter?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-aiscripter" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385784&theme=neutral" alt="AIScripter - Artificial&#0032;intelligence&#0044;&#0032;chatgpt&#0044;&#0032;social&#0032;media&#0044;&#0032;videos | Product Hunt"  width="250" height="54" /></a>
-          <Link href='/app' type="button" style={{ fontFamily: 'var(--font-mono)', width: 200, }} className=" flex items-center justify-center text-center bg-gradient-to-r from-cyan-500 to-indigo-500 rounded-full px-2 text-white">
+          <Link href='/app' type="button" style={{ fontFamily: 'var(--font-mono)', width: 200, }} className="items-center justify-center text-center bg-gradient-to-r from-cyan-500 to-indigo-500 rounded-full px-2 text-white hidden md:flex ">
             Try for free
           </Link>
         </div>
       </div>
 
-      <div className="flex flex-row justify-between items-center w-full h-full" style={{ paddingTop: 100, height: '100%' }}>
-        <div className='basis-1/2 '>
+      <div className="md:columns lg:flex justify-between items-center w-full h-full" style={{ paddingTop: 100, height: '100%' }}>
+        <div className='md:basis-1/1 lg:basis-1/2'>
           <div className={"text-5xl font-light"}>
             <span className={styles.slideText}>
-              10X faster way to write
+              The fastest way to write
               short video script for<br />
             </span>
             <span style={{ paddingTop: 20, height: 100 }} className={styles.slideText}>
@@ -63,14 +63,14 @@ export default function Home() {
               Try for free
             </Link>
           </div>
-          <div className='flex flex-row'>
+          <div className='flex flex-row mb-5'>
             <div className='basis-1/1 mt-4'>
               <img src={'/insta.png'} width={'50%'} height={'50%'} />
             </div>
           </div>
         </div>
 
-        <div className='basis-1/2 h-full' style={{border: '2px solid indigo', height: '100%'}}>
+        <div className='md:basis-1/1 lg:basis-1/2 h-full' style={{border: '2px solid indigo', height: '100%'}}>
           <video controls width={'100%'} height="100%">
             <source src={"/official_video.mp4"} type="video/mp4"/>
           </video>
@@ -78,42 +78,46 @@ export default function Home() {
       </div>
 
       <div className='text-center mt-20 text-xl text-indigo-600 '>How it works!</div>
-      <div className={styles.grid} style={{ marginTop: 30 }}>
-        <div
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Enter video title
-          </h2>
-          <p className={inter.className}>
-            Enter a title that matches your reels. Example: 'How to be a marketer'
-          </p>
+      <div className="sm:columns md:flex lg:flex items-center justify-between w-full" style={{ marginTop: 30 }}>
+        <div className='sm:basis-1/1 md:basis-1/2 mb-4'>
+          <div
+            className={styles.card}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <h2 className={inter.className}>
+              Enter video title
+            </h2>
+            <p className={inter.className}>
+              Enter a title that matches your reels. Example: 'How to be a marketer'
+            </p>
+          </div>
         </div>
-
-        <div
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Enter the description
-          </h2>
-          <p className={inter.className}>Your description on how the AI will generate the scripts. Example: Let the scripts to 5 steps.</p>
+        <div className='sm:basis-1/1 md:basis-1/2 mb-4'>
+          <div
+            className={styles.card}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <h2 className={inter.className}>
+              Enter the description
+            </h2>
+            <p className={inter.className}>Your description on how the AI will generate the scripts. Example: Let the scripts to 5 steps.</p>
+          </div>
         </div>
-
-        <div
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Other setting
-          </h2>
-          <p className={inter.className}>
-            Add Keywords, select the language in which the AI will generate the script and type (professional, Informative, declarative) of scripts
-          </p>
+        <div className='sm:basis-1/1 md:basis-1/2 mb-4'>
+          <div
+            className={styles.card}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <h2 className={inter.className}>
+              Other setting
+            </h2>
+            <p className={inter.className}>
+              Add Keywords, select the language in which the AI will generate the script and type (professional, Informative, declarative) of scripts
+            </p>
+          </div>
         </div>
       </div>
       {/* <div>
