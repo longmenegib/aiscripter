@@ -144,6 +144,7 @@ export default function Home() {
           </ul>
         </div>
       </div>
+      {/* <iframe style={{border: "none"}} src="https://cards.producthunt.com/cards/posts/385784?v=1" width="100%" height="600" frameBorder="0" scrolling="no" allowFullscreen></iframe> */}
       <div className='text-center mt-20 text-xl '>Develop by <span className='text-indigo-500'>Longmene Gibril</span></div>
     </main>
   )
