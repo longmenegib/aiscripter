@@ -32,9 +32,13 @@ export default function Application() {
   const [language, setLanguage] = useState("English");
   const [duration, setDuration] = useState(30);
   const [type, setType] = useState("Informative");
+  const [image, setImage] = useState("No");
 
   const [generatedAnswer, setGeneratedAnswer] = useState("");
+  const [generatedImage, setGeneratedImage] = useState(null);
   const [status, setStatus] = useState(true);
+
+  const [showModal, setShowModal] = useState(false);
 
   const generateScript = async () => {
     if (!title || !description || !keywords || !language || !duration || !type) return;
@@ -47,17 +51,18 @@ export default function Application() {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "authorization": 'Bearer '+ jwt_token,
+        "authorization": 'Bearer ' + jwt_token,
       },
-      body: JSON.stringify({ prompt: formatText }),
+      body: JSON.stringify({ prompt: formatText, image: image }),
     });
     const data = await response.json();
     setLoading(false);
     if (data.success) {
       setGeneratedAnswer(data.text);
+      setGeneratedImage(data.thumbnail_url);
       setStatus(true);
     } else {
-      setStatus(false)
+      setStatus(false);
     }
   }
 
@@ -66,11 +71,11 @@ export default function Application() {
       <div className={styles.description} style={{ borderBottom: '1px solid gray' }}>
         <p className="text-3xl font-bold text-indigo-500" style={{ cursor: 'pointer' }}>
           <Link href='/'>
-            <img src='/logo.svg' width={200}/>
+            <img src='/logo.svg' width={200} />
           </Link>
         </p>
         <div className='flex'>
-        {/* <a href="https://www.producthunt.com/posts/aiscripter?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-aiscripter" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385784&theme=neutral" alt="AIScripter - Artificial&#0032;intelligence&#0044;&#0032;chatgpt&#0044;&#0032;social&#0032;media&#0044;&#0032;videos | Product Hunt"  width="250" height="54" /></a> */}
+          {/* <a href="https://www.producthunt.com/posts/aiscripter?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-aiscripter" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385784&theme=neutral" alt="AIScripter - Artificial&#0032;intelligence&#0044;&#0032;chatgpt&#0044;&#0032;social&#0032;media&#0044;&#0032;videos | Product Hunt"  width="250" height="54" /></a> */}
           <button type="button" style={{ fontFamily: 'var(--font-mono)', width: 160 }} className="bg-gradient-to-r from-cyan-500 to-indigo-500 rounded-full px-2 py-2 text-white">
             Upgrade to plus
           </button>
@@ -191,11 +196,39 @@ export default function Application() {
               </select>
             </div>
           </div>
+          <div className="columns-1 my-2 px-2">
+            <label>Image generation *</label>
+            <div className="form-group">
+              <select defaultValue={'No'} onChange={(e) => setImage(e.target.value)} className="w-full shadow-lg bg-indigo-200 text-white-900" required name="language" style={{ border: '1px solid gray', outline: 'none', height:40 }}>
+                <option value={'No'}>
+                  No
+                </option>
+                <option value={'256x256'}>
+                  256x256
+                </option>
+                <option style={{color: '#fff'}} disabled value={'512x512'}>
+                  512x512
+                </option>
+                <option style={{color: '#fff'}} disabled value={'1024x1024'}>
+                  1024x1024
+                </option>
+              </select>
+            </div>
+          </div>
           <div style={{ marginTop: 20 }}>
             <button disabled={loading} onClick={generateScript} type="button" style={{ fontFamily: 'var(--font-mono)', width: '100%' }} className="bg-gradient-to-r from-cyan-500 to-indigo-500 rounded-full px-2 py-2 text-white">
               Generate script
             </button>
           </div>
+          {status &&
+            <>
+              {generatedImage && <div style={{ marginTop: 20 }}>
+                <button onClick={() => setShowModal(true)} type="button" style={{ fontFamily: 'var(--font-mono)', width: '100%' }} className="bg-gradient-to-r from-green-500 to-green-700 rounded-full px-2 py-2 text-white">
+                  View Generated Images
+                </button>
+              </div>
+              }
+            </>}
         </div>
         <div className="md:basis-1/1 lg:basis-3/4 lg:h-full" style={{ minHeight: 500, backgroundColor: 'white', padding: 10 }}>
           <div className={styles.generate} style={{ minHeight: 500, width: '100%', padding: 10 }}>
@@ -204,22 +237,22 @@ export default function Application() {
                 {status ?
                   <>
                     {generatedAnswer ?
-                      <div className='' style={{whiteSpace: 'pre-wrap'}}>
+                      <div className='' style={{ whiteSpace: 'pre-wrap' }}>
                         <Typewriter
-                        
-                        options={{
-                          autoStart: true,
-                          loop: false,
-                          delay: 20
-                        }}
-                        onInit={(typewriter) => {
-                          typewriter.typeString(generatedAnswer)
-                            .start();
-                        }}
+
+                          options={{
+                            autoStart: true,
+                            loop: false,
+                            delay: 20
+                          }}
+                          onInit={(typewriter) => {
+                            typewriter.typeString(generatedAnswer)
+                              .start();
+                          }}
                         />
                       </div>
                       :
-                      <div style={{whiteSpace: 'pre-wrap'}}>
+                      <div style={{ whiteSpace: 'pre-wrap' }}>
                         AI will generate your script here...
                       </div>}
                   </>
@@ -240,9 +273,51 @@ export default function Application() {
           </div>
         </div>
       </div>
-      <div style={{width: '100%', textAlign: 'center'}}>
-            <span className='text-indigo-600 w-full text-xl p-2'>Version 1.0.0</span>
-        </div>
+      <div style={{ width: '100%', textAlign: 'center' }}>
+        <span className='text-indigo-600 w-full text-xl p-2'>Version 1.0.0</span>
+      </div>
+      {showModal ? (
+        <>
+          <div className="flex justify-center items-center overflow-x-hidden overflow-y-auto w-full fixed inset-0 z-50 outline-none focus:outline-none">
+            <div className="relative w-full my-6 mx-auto max-w-3xl">
+              <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                <div className="flex items-start justify-between p-5 border-b border-solid border-gray-300 rounded-t ">
+                  <h3 className="text-3xl font=semibold">Image based on the script</h3>
+                  <button
+                    className="bg-transparent border-0 text-black float-right pb-2"
+                    onClick={() => setShowModal(false)}
+                  >
+                    <span className="text-black opacity-7 h-6 w-6 text-xl block bg-gray-400 rounded-full">
+                      x
+                    </span>
+                  </button>
+                </div>
+                <div className="relative p-6 flex-auto items-center justify-center">
+                  <img src={generatedImage}/>
+                </div>
+                <div className="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
+                  <button
+                    className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1"
+                    type="button"
+                    onClick={() => setShowModal(false)}
+                  >
+                    Close
+                  </button>
+                  <a
+                  href='#'
+                    download={generatedImage}
+                    className="text-white bg-gradient-to-r from-cyan-500 to-indigo-500 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
+                    type="button"
+                    // onClick={() => setShowModal(false)}
+                  >
+                    Doanload
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </>
+      ) : null}
     </main>
   )
 }

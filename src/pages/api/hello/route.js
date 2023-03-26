@@ -27,7 +27,19 @@ const handler = async(req, res) => {
           stop: ["{}"],
         });
 
-        res.status(200).json({ text: completion.data.choices[0].text, success: true });
+        if(req.body.image !== 'No'){
+          const response = await openai.createImage({
+            prompt: `Can you please generate a thumbnail image that matches this video scripts below.\n ${completion.data.choices[0].text}`,
+            n: 1,
+            size: req.body.image,
+          });
+  
+          let image_url = response.data.data[0].url;
+          res.status(200).json({ text: completion.data.choices[0].text, thumbnail_url: image_url, success: true });
+        }else{
+          res.status(200).json({ text: completion.data.choices[0].text, thumbnail_url: null, success: true });
+        }
+        
       }
       else {
         res.status(400).json({ text: "No prompt provided.", success: false });

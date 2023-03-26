@@ -10,9 +10,9 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.description}>
-        <img src='/logo.svg' width={200}/>
+        <img src='/logo.svg' width={200} />
         <div className='flex'>
-        <a href="https://www.producthunt.com/posts/aiscripter?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-aiscripter" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385784&theme=neutral" alt="AIScripter - Artificial&#0032;intelligence&#0044;&#0032;chatgpt&#0044;&#0032;social&#0032;media&#0044;&#0032;videos | Product Hunt"  width="250" height="54" /></a>
+          <a href="https://www.producthunt.com/posts/aiscripter?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-aiscripter" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385784&theme=neutral" alt="AIScripter - Artificial&#0032;intelligence&#0044;&#0032;chatgpt&#0044;&#0032;social&#0032;media&#0044;&#0032;videos | Product Hunt" width="250" height="54" /></a>
           <Link href='/app' type="button" style={{ fontFamily: 'var(--font-mono)', width: 200, }} className="items-center justify-center text-center bg-gradient-to-r from-cyan-500 to-indigo-500 rounded-full px-2 text-white hidden md:flex ">
             Try for free
           </Link>
@@ -24,7 +24,7 @@ export default function Home() {
           <div className={"text-5xl font-light"}>
             <span className={styles.slideText}>
               The fastest way to write
-              short video script for<br />
+              video script + thumbnail images for<br />
             </span>
             <span style={{ paddingTop: 20, height: 100 }} className={styles.slideText}>
               <span className="text-indigo-500 font-bold animate-marquee whitespace-nowrap">
@@ -70,9 +70,9 @@ export default function Home() {
           </div>
         </div>
 
-        <div className='md:basis-1/1 lg:basis-1/2 h-full' style={{border: '2px solid indigo', height: '100%'}}>
+        <div className='md:basis-1/1 lg:basis-1/2 h-full' style={{ border: '2px solid indigo', height: '100%' }}>
           <video controls width={'100%'} height="100%">
-            <source src={"/official_video.mp4"} type="video/mp4"/>
+            <source src={"/official_video.mp4"} type="video/mp4" />
           </video>
         </div>
       </div>
