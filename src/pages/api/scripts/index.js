@@ -1,20 +1,26 @@
 import { Configuration, OpenAIApi } from "openai";
 import authenticate from "../../../../middleware/authenticate";
-import generateJWT from "../token/generatetoken";
+import checkRequestLimit from "../../../../middleware/checkRequestLimit";
+import User from "../../../../models/user";
+
+
+
 const configuration = new Configuration({
     organization: "org-V5aBqqGFuhTfurCJCMW74MjY",
     apiKey: process.env.OPENAI_API_KEY,
 });
 const openai = new OpenAIApi(configuration);
-// const response = await openai.listEngines();
 
 const handler = async(req, res) => {
   const requestMethod = req.method;
   res.setHeader('Content-Type', 'application/json');
-  
+  await authenticate(req, res);
+
+  const user = await User.findById(req.body.userid);
+  await checkRequestLimit(user, res);
+
   switch (requestMethod) {
     case 'POST':
-      await authenticate(req, res);
       if (req.body.prompt !== undefined) {
         const completion = await openai.createCompletion({
           model: "text-davinci-003",
@@ -30,7 +36,7 @@ const handler = async(req, res) => {
         if(req.body.image !== 'No'){
           const response = await openai.createImage({
             prompt: `Can you please generate a thumbnail image that matches this video scripts below.\n ${completion.data.choices[0].text}`,
-            n: 1,
+            n: 3,
             size: req.body.image,
           });
   
@@ -46,8 +52,7 @@ const handler = async(req, res) => {
       }
       break;
     default:
-      // let token = generateJWT();
-      res.status(200).json({ message: 'token',  success: true})
+      res.status(200).json({ message: 'Access accepted',  success: true})
   }
 }
 

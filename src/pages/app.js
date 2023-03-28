@@ -3,8 +3,9 @@ import styles from './page.module.css'
 import Typewriter from 'typewriter-effect';
 import { authorization } from '../../helpers';
 import Link from 'next/link';
+import { saveAs } from 'file-saver';
 
-const jwt_token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdpYnJpbGxvbmdtZW5lQGdtYWlsLmNvbSIsInJvbGUiOiJjZW9haXNyaXB0ZXIiLCJpYXQiOjE2Nzk3NDI0NzJ9.M3aaydwkof28JhCBaq7ziXD_vDxcqadpruAc3uwolpw';
+const jwt_token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdpYnJpbEBnbWFpbC5jb20iLCJpZCI6IjY0MjFmYTFjZDU1YmIxODdlNWEzNzhmMyIsImlhdCI6MTY3OTk0ODMzMX0.j0QtvlQ4umoJKHLBnY0Zgktgx6UEdtPo6MzfJ6lFfWE';
 
 
 const requestFormat = (title, desc, dur, lan, keywords, type) => {
@@ -47,13 +48,13 @@ export default function Application() {
     // console.log(formatText);
     // return
     setLoading(true)
-    const response = await fetch("/api/hello/route", {
+    const response = await fetch("/api/scripts", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         "authorization": 'Bearer ' + jwt_token,
       },
-      body: JSON.stringify({ prompt: formatText, image: image }),
+      body: JSON.stringify({ prompt: formatText, image: image, userid: '6421fa1cd55bb187e5a378f3' }),
     });
     const data = await response.json();
     setLoading(false);
@@ -65,6 +66,12 @@ export default function Application() {
       setStatus(false);
     }
   }
+
+   const download = async(url) => {
+    console.log('hlll')
+    saveAs(url, 'image.png');
+  }
+
 
   return (
     <main className={styles.main} style={{ padding: 0 }}>
@@ -303,15 +310,14 @@ export default function Application() {
                   >
                     Close
                   </button>
-                  <a
-                  href='#'
-                    download={generatedImage}
+                  <button
+                    onClick={()=> download(generatedImage)}
                     className="text-white bg-gradient-to-r from-cyan-500 to-indigo-500 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
                     type="button"
                     // onClick={() => setShowModal(false)}
                   >
                     Doanload
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>

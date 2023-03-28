@@ -1,11 +1,6 @@
 import jwt from "jsonwebtoken";
 
-function generateJWT() {
-    let payload = {
-        email: 'gibrillongmene@gmail.com',
-        role: 'ceoaisripter',
-    };
-  
+function generateJWT(payload) {
     return jwt.sign(payload, process.env.JWT_KEY, {
     });
 }

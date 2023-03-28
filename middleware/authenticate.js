@@ -5,12 +5,12 @@ const authenticate = (req, res) => {
     const token = req.headers.authorization.split(" ")[1];
     const decodedToken = jwt.verify(token, process.env.JWT_KEY);
     if (Math.floor(Date.now() / 1000) > decodedToken?.exp) {
-      res.status(401).json({ success: false, message: "Accès impossible" });
+      res.status(401).json({ success: false, message: "Unuthorized access" });
     } else {
       return;
     }
   } catch {
-    res.status(401).json({ success: false, message: "Accès impossible" });
+    res.status(401).json({ success: false, message: "Unuthorized access" });
   }
 };
 export default authenticate;
