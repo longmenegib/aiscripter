@@ -1,5 +1,6 @@
-import Head from 'next/head'
-import './globals.css'
+import Head from 'next/head';
+import './globals.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const metadata = {
   title: 'Create Next App',
@@ -13,7 +14,7 @@ export default function RootLayout({ Component, pageProps }) {
       <Head>
         <title>AIScripter</title>
         <meta name="title" content="AiScripter" />
-        <meta name="description" content="Generate script for your video automatically" />
+        <meta name="description" content="AI Scripter helps you create compelling scripts for Facebook, TikTok, YouTube, Instagram and more" />
         {/* <link rel = "icon" href= "/logo.svg" 
         type = "image/x-icon"></link> */}
       </Head>

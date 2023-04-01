@@ -26,7 +26,11 @@ a {
   text-decoration: none;
 }
 
-
+p {
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 17px;
+    line-height: 25.5px;
+  }
 
 @media (prefers-color-scheme: dark) {
   html {

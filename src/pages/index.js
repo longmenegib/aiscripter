@@ -4,6 +4,7 @@ import styles from './page.module.css'
 import Typewriter from 'typewriter-effect';
 import Link from 'next/link';
 import { FaCheckCircle } from 'react-icons/fa';
+import { Container, Row, Col } from 'react-bootstrap';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,6 +20,41 @@ export default function Home() {
           </Link>
         </div>
       </div> */}
+
+      <Container>
+      <Row className={styles.frow} style={{  }}>
+            <Col md="6" className={styles.headtxt}>
+              <h1 className={styles.heading}>Generate Engaging Video Scripts For Your
+                <Typewriter
+                  options={{
+                    strings: ['TikTok', 'Instagram', 'YouTube'],
+                    autoStart: true,
+                    loop: true,
+                  }}
+                /></h1>
+              <p style={{ marginTop: 30 }}>Join our community of passionate crypto enthusiasts. CryptCommunities has been bringing together buyers, sellers, investors, miners, and new comers to the world of crypto and forex since 2017.</p>
+              <center>
+                <p>BTC ICON</p>
+              </center>
+              <div className={styles.acbtn} style={{ display: 'flex', marginTop: 25 }}>
+                {/* <Slide up> */}
+                  <a href="https://play.google.com/store/apps/details?id=com.cryptcommunities" style={{ textDecoration: 'none', marginRight: 10 }}>
+                    <button className={styles.getbtn}>
+                      <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left', paddingLeft: 5, paddingRight: 10 }}>
+                        <span style={{ fontSize: 10, color: '#A8A8A8', lineHeight: 1, fontWeight: 'bold' }}>Download for</span>
+                        <span style={{ fontWeight: 'bold', fontSize: 14 }}>Android</span>
+                      </div>
+                    </button>
+                  </a>
+                {/* </Slide> */}
+              </div>
+            </Col>
+            <Col className="d-none d-md-flex" style={{ justifyContent: 'flex-end', alignItems: 'center' }} md="6">
+              {/* <FontAwesomeIcon icon={faBtc} className="intro" /> */}
+              <p>PHONE BTC ICON</p>
+            </Col>
+          </Row>
+        </Container>
 
       <div className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
