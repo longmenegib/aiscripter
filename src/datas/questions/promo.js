@@ -1,0 +1,1 @@
+const promo = "Can you generate a promotional video script for Sclean, an accessory product, using the following template?"

@@ -4,6 +4,9 @@ import styles from './page.module.css'
 import Typewriter from 'typewriter-effect';
 import Link from 'next/link';
 import { FaCheckCircle } from 'react-icons/fa';
+import TestimonialSection from '../components/Testimonial';
+import Footer from '../components/Footer';
+import FAQSection from '../components/FAQ';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -30,14 +33,13 @@ export default function Home() {
               <p className="text-lg sm:text-xl text-white font-medium mb-8">
                 AI Scripter helps you create compelling scripts for Facebook, TikTok, YouTube, Instagram and more
               </p>
-              <button className="bg-white text-purple-500 rounded-full py-3 px-8 font-medium hover:bg-gray-100">
+              <a type='button' href='/login' className="bg-white text-purple-500 rounded-full py-3 px-8 font-medium hover:bg-gray-100">
                 Try it Now
-              </button>
+              </a>
             </div>
           </div>
         </div>
       </div>
-
 
       <div className="bg-white">
         <div className="container mx-auto py-12 px-4 sm:px-6 lg:px-8">
@@ -127,11 +129,14 @@ export default function Home() {
           </div>
 
           <div className="mt-10 flex justify-center">
-            <div className="md:flex md:justify-evenly md:px-10 w-full">
+            <div className="md:flex flex-wrap md:justify-center md:px-10 ">
               {/* Basic Plan */}
-              <div className="bg-white rounded-lg shadow-md mb-3 md:mb-0">
-                <div className="px-6 py-8">
+              <div className="md:w-1/3 w-full mb-3 md:mb-0">
+                <div className="bg-white rounded-lg shadow-md w-11/12 px-6 py-8">
                   <h3 className="text-xl font-medium text-gray-900">Basic</h3>
+                  <p className="mt-4 text-gray-600">
+                  Perfect for individuals who only need a few video scripts per month.
+                  </p>
                   <div className="flex items-center justify-center mt-4">
                     <span className="px-3 flex items-start text-6xl tracking-tight text-gray-900">
                       <span className="mt-2 mr-2 text-4xl font-medium">$</span>0
@@ -185,9 +190,12 @@ export default function Home() {
               </div>
 
               {/* Intermediate Plan */}
-              <div className="bg-white rounded-lg shadow-md mb-3 md:mb-0">
-                <div className="px-6 py-8">
+              <div className="md:w-1/3 w-full mb-3 md:mb-0">
+                <div className="bg-white rounded-lg shadow-md w-11/12 px-6 py-8">
                   <h3 className="text-xl font-medium text-gray-900">Intermediate</h3>
+                  <p className="mt-4 text-gray-600">
+                    Perfect for individuals who want to use AIScripter casually for hobbies and work
+                  </p>
                   <div className="flex items-center justify-center mt-4">
                     <span className="px-3 flex items-start text-6xl tracking-tight text-gray-900">
                       <span className="mt-2 mr-2 text-4xl font-medium">$</span>10
@@ -241,9 +249,12 @@ export default function Home() {
               </div>
 
               {/* Ultime Plan */}
-              <div className="bg-white rounded-lg shadow-md mb-3 md:mb-0">
-                <div className="px-6 py-8">
+              <div className="md:w-1/3 w-full mb-3 md:mb-0">
+                <div className="bg-white rounded-lg shadow-md w-11/12 px-6 py-8">
                   <h3 className="text-xl font-medium text-gray-900">Ultimate</h3>
+                  <p className="mt-4 text-gray-600">
+                  The most popular option for professionals who want to use automations and write long-form.
+                  </p>
                   <div className="flex items-center justify-center mt-4">
                     <span className="px-3 flex items-start text-6xl tracking-tight text-gray-900">
                       <span className="mt-2 mr-2 text-4xl font-medium">$</span>25
@@ -300,6 +311,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <TestimonialSection />
+      <FAQSection />
+      <Footer />
     </main>
   )
 }

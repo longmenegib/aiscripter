@@ -2,12 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+:root {
+  --main-bg-color: #1596A7;
+  --primary: pink;
+  --secondary: #7e84a3;
+  --black: #131523;
+  --gray400: #d7dbec;
+  --gray200: #e6e9f4;
+  --gray100: #f5f6fa;
+}
+
+
+.nav-item{
+  height: 50px;
+  justify-content: start;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  width: 100%;
+  color: var(--gray400) !important;
+  padding-left: 10px;
+}
+
+.nav-item:hover{
+  /* background-color: var(--black) ; */
+  /* color: var(--primary) !important;
+  border-left: 4px var(--primary) groove;
+  flex-grow: 1;
+  overflow: hidden; */
+}
+.item-active{
+  /* background-color: var(--primary) ; */
+  color: var(--primary) !important;
+  border-right: 10px var(--primary) solid;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+/* Change the color of the scroll bar */
+::-webkit-scrollbar {
+  background-color: #f5f5f5;
+  width: 2px; /* Set the width of the scroll bar */
+}
+
+/* Change the color of the thumb of the scroll bar */
+::-webkit-scrollbar-thumb {
+  background-color: rgb(157, 157, 157);
+}
+
+/* Change the color of the thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: pink;
 }
 
 html,
@@ -33,3 +88,4 @@ a {
     color-scheme: dark;
   }
 }
+

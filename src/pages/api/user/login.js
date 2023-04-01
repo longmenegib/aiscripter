@@ -1,11 +1,12 @@
 import User from "../../../../models/user";
 import generateJWT from "../token/generatetoken";
 import bcrypt from 'bcrypt';
+import dbConnect from "../../../../lib/mongodb";
 
 const handler = async(req, res) => {
   const requestMethod = req.method;
   res.setHeader('Content-Type', 'application/json');
-  
+  await dbConnect();
   switch (requestMethod) {
     case 'POST':
         const { email, password, name } = req.body;
