@@ -94,9 +94,9 @@ export default function Login() {
                             </div>
                         </div>
                         <div className="flex items-center justify-center mt-6">
-                            <button className="bg-gray-900 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
+                            <a href='/dashboard' type="button" className="bg-gray-900 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
                                 Log in
-                            </button>
+                            </a>
                         </div>
                     </form>
                     <p className="mt-4 text-center text-gray-500 text-xs">
