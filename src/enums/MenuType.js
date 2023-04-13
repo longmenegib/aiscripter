@@ -1,0 +1,6 @@
+export default {
+    CATEGORY: 'CATEGORY',
+    PROFIL: 'PROFIL',
+    ALERT: 'ALERT',
+    VISIBILITY: 'VISIBILITY'
+}
