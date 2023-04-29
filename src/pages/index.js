@@ -11,6 +11,7 @@ import FAQSection from '../components/FAQ';
 
 import tron from './../assets/testz.png';
 import map from './../assets/map.jpg';
+import bg from './../assets/bg2.jpg';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -74,7 +75,7 @@ export default function Home() {
         </div>
       </div>
 
-    <section className={styles.section1}>
+    <section className={styles.section1} style={{ backgroundImage: `url(${bg.src})` }}>
       <Container>
         <Row className={styles.frow}>
             <Col md="6" className={styles.headtxt}>
