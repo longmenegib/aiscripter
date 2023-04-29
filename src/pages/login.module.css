@@ -1,0 +1,142 @@
+.main{
+    background-color: white;
+    height: 100vh;
+    width: 100vw;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    position: fixed;
+    padding: 0px;
+  }
+  .odd{
+    margin: 0px;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    padding: 0px;
+  }
+  .overlay{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(3,86,228,0.6) 45%, rgba(21,104,245,0.6) 100%);
+    padding: 30px 10px;
+  }
+  .sidesec{
+    margin-top: 70px;
+    margin-left: 30px;
+    color: #ffffff;
+  }
+  .sideinfo{
+    display: flex;
+    flex-direction: column;
+    padding-right: 15px;
+    height: 100%;
+    border-left: 2px solid #707070;
+    margin: 10px;
+  }
+  .sideinfo .bold{
+    border-left: 2px solid #eef2f7;
+    margin-left: -2px;
+    padding-left: 7px;
+    color: #eef2f7;
+  }
+  .sideinfo span{
+    margin-left: -2px;
+    padding-left: 7px;
+    color: #707070;
+    margin-bottom: 10px;
+  }
+  .getbtn{
+    padding: 10px;
+    padding-right: 25px;
+    border-radius: 7px;
+    background: linear-gradient(45deg, #000 45%, rgba(250,250,250,0.1) 100%);
+    color: #EEF2F7;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid #171717;
+    cursor: pointer;
+    outline: none; 
+  }
+  .getbtn:hover{
+      background: linear-gradient(45deg, #000 25%, rgba(250,250,250,0.2) 100%);
+    }
+
+  .right{
+    height: 100vh;
+    padding-top: 25px;
+    padding-bottom: 100px;
+    overflow-y: auto;
+  }
+  .header{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-right: 20px;
+  }
+  .backbtn{
+    border: 0px;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    
+  }
+  .backbtn:hover{
+      opacity: 0.5;
+    }
+  .regform{
+    margin-top: 30px;
+  }
+  .insect{
+    margin-top: 40px;
+    max-width: 650px;
+  }
+  .afield{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+  .label{
+    font-size: 14px;
+    color: #999;
+    padding: 0px;
+    margin: 0px;
+  }
+  .inptxt{
+    border: 1px solid #dbdbdb;
+    background-color: white;
+    border-radius: 3px;
+    padding: 5px;
+    outline: none;
+    
+  }
+  .inptxt:focus{
+      border: 1px solid #09C0FA;
+    }
+  .crtbtn{
+    border: 0px;
+    background-color: #070707;
+    color: white;
+    border-radius: 5px;
+    padding: 7px 20px;
+    cursor: pointer;
+    
+  }
+  .crtbtn:hover {
+      opacity: 0.8;
+    }
+
+  @media screen and (max-width: 770px){
+    .crtbtn{
+      width: 100%;
+      margin-bottom: 15px;
+    }
+    .reverser{
+      flex-direction: column-reverse;
+    }
+    .crtxt{
+      margin-top: 25px;
+    }
+  }
