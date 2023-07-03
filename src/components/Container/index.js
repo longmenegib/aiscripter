@@ -8,7 +8,7 @@ import Appbar from '../Appbar/Appbar';
 function AppLayout(props) {
 
   return (
-    <Box className="bg-gray-100" sx={{ display: 'flex', height: '100%', minHeight: '100vh' }}>
+    <Box sx={{ display: 'flex', height: '100%', minHeight: '100vh', backgroundColor: '#f6f6f6' }}>
       <CssBaseline />
       <Sidebar />
       <Box

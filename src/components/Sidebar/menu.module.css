@@ -1,0 +1,41 @@
+.navitem{
+    height: 40px;
+    justify-content: start;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    width: 100%;
+    padding-left: 20px;
+    margin-bottom: 5px;
+    text-decoration: none;
+    color: #a1a1a1;
+}
+
+.navitem:hover, .activeitem:hover{
+    background-color: #f6f6f6;
+    color: inherit;
+}
+
+.activeitem{
+    height: 40px;
+    justify-content: start;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    width: 100%;
+    padding-left: 18px;
+    margin-bottom: 5px;
+    border-left: 2px solid #1568f5;
+    text-decoration: none;
+    color: #424242;
+}
+
+.selected{
+    color: #424242;
+    margin-left: 8px;
+}
+
+.unselected{
+    color: #a1a1a1;
+    margin-left: 8px;
+}

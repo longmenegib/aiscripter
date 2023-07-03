@@ -7,10 +7,11 @@ export default {
         USER_SELECT: '/utilisateurs/:id',
         DASHBOARD: '/dashboard',
         SETTING: '/settings',
-        DOCUMENT: '/documents',
+        DOCUMENT: '/scripts',
         FAQ: '/frequently-asked-questions',
         SUBSCRIPTION: '/subscriptions',
-        PROFILE: '/profile',
-        TEMPLATES: '/templates',
+        PROFILE: '/account',
+        EXPLORE: '/explore',
+        APP: '/scrips/new'
     }
 }

@@ -7,13 +7,6 @@ import { styled } from '@mui/material';
 
 const drawerWidth = 240;
 
-const GradientChip = styled(({ colors }) => ({
-  color: 'white',
-  ...(colors && {
-    background: `linear-gradient(to right bottom, ${colors.join(',')})`,
-  }),
-}));
-
 function ResponsiveDrawer(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -51,7 +44,7 @@ function ResponsiveDrawer(props) {
         >
           <SidebarContent />
           <div className='bg-gray-100 flex items-center justify-center hover:bg-gray-200'
-           style={{position: 'absolute', bottom: 0, borderTop: '1px dashed gray', height: 40, width: '100%', cursor: 'pointer'}}>
+           style={{position: 'absolute', bottom: 0, borderTop: '0.5px dashed gray', height: 40, width: '100%', cursor: 'pointer'}}>
               Logout
           </div>
         </Drawer>
@@ -72,7 +65,7 @@ function ResponsiveDrawer(props) {
         >
           <SidebarContent />
           <div className='bg-gray-100 flex items-center justify-center hover:bg-gray-200'
-           style={{position: 'absolute', bottom: 0, borderTop: '1px solid #dbdbdb', height: 40, width: '100%', cursor: 'pointer', color: 'red', backgroundColor: 'white'}}>
+           style={{position: 'absolute', bottom: 0, borderTop: '0.5px solid #dbdbdb', height: 40, width: '100%', cursor: 'pointer', color: 'red', backgroundColor: 'white'}}>
               Logout
           </div>
         </Drawer>

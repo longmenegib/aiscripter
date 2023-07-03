@@ -2,6 +2,11 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
 
+import styles from './login.module.css';
+
+import { Container, Row, Col } from 'react-bootstrap';
+import side from './../assets/img2.jpg';
+
 export default function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -26,104 +31,55 @@ export default function Login() {
 
 
     return (
-        <div className="min-h-screen bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
-            <Head>
-                <title>Register - AIScripter</title>
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
-            <div className="sm:mx-auto sm:w-full sm:max-w-md">
-                <img
-                    className="mx-auto h-12 w-auto"
-                    src="/logo.svg"
-                    alt="AIScripter logo"
-                />
-                <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-                    Set up your account
-                </h2>
-                {/* <p className="mt-2 text-center text-sm text-gray-600 max-w">
-                    Or{' '}
-                    <Link href="/signup">
-                        <span className="font-medium text-indigo-600 hover:text-indigo-500">
-                            create an account
-                        </span>
+        <section style={{ width: '100%', padding: 0 }}>
+          <Head>
+            <title>Sign Up - AIScripter</title>
+            <link rel="icon" href="/favicon.ico" />
+          </Head>
+          <div className={styles.main}>
+            <Row style={{ margin: 0 }}>
+              <Col style={{ backgroundImage: `url(${side.src})` }} md="4" className={["d-none d-md-block", styles.odd ]}>
+                <div className={styles.overlay}>
+                  <div style={{ display: 'flex', alignItems: 'center' }}>
+                    <Link href="/">
+                      <img src='/logo.svg' style={{ marginTop: 3, height: 100, width: 200 }} />
                     </Link>
-                </p> */}
-            </div>
-            <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-                <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-                    <form className="space-y-6" onSubmit={handleSubmit}>
-                        <div>
-                            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                                Email address
-                            </label>
-                            <div className="mt-1">
-                                <input
-                                    id="email"
-                                    name="email"
-                                    type="email"
-                                    autoComplete="email"
-                                    placeholder='Enter email address'
-                                    required
-                                    value={email}
-                                    onChange={handleEmailChange}
-                                    className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                                />
-                            </div>
-                        </div>
-
-                        <div>
-                            <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                                Full name
-                            </label>
-                            <div className="mt-1">
-                                <input
-                                    id="name"
-                                    name="name"
-                                    type="text"
-                                    autoComplete="name"
-                                    placeholder='Enter full name'
-                                    required
-                                    value={name}
-                                    onChange={handleNameChange}
-                                    className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                                />
-                            </div>
-                        </div>
-
-                        <div>
-                            <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-                                Password
-                            </label>
-                            <div className="mt-1">
-                                <input
-                                    id="password"
-                                    name="password"
-                                    type="password"
-                                    autoComplete="current-password"
-                                    placeholder='Enter password'
-                                    required
-                                    value={password}
-                                    onChange={handlePasswordChange}
-                                    className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                                />
-                            </div>
-                        </div>
-
-                        <div className="flex items-center justify-center mt-6">
-                            <a href='/verifyEmail' type='button' className="bg-gray-900 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
-                                Create account
-                            </a>
-                        </div>
-                    </form>
-                    <p className="mt-1 text-center text-gray-500 text-xs">
-                        Already a member?
-                        <a className="underline hover:text-gray-900" href="/login">
-                            Log in
-                        </a>
-                    </p>
+                  </div>
                 </div>
-            </div>
-        </div>
+              </Col>
+              <Col md="8" className={styles.right}>
+                <Container>
+                  <div className={styles.header}>
+                    <div style={{ flex: 1 }}>
+                      <h4>Welcome,</h4>
+                      <p>Create an account with us to start generating amazing video scripts.</p>
+                    </div>
+                  </div>
+                  <form className={styles.regform} autoCapitalize='off none' autoComplete='none'>
+                    <div className={styles.insect}>
+                        <div className={styles.afield}>
+                            <label className={styles.label}>Full Name</label>
+                            <input value={name} onChange={handleNameChange} type="text" placeholder='John Doe' className={styles.inptxt} /> 
+                        </div>
+                      <div className={styles.afield}>
+                        <label className={styles.label}>Email Address</label>
+                        <input value={email} onChange={handleEmailChange} type="text" placeholder='john.doe@great-company.com' className={styles.inptxt} /> 
+                      </div>
+                      <div className={styles.afield}>
+                        <label className={styles.label}>Password</label>
+                        <input value={password} onChange={handlePasswordChange} type="password" placeholder='********' className={styles.inptxt} /> 
+                      </div>
+                      <div className={styles.reverser} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <span className={styles.crtxt} style={{ margin: 0, padding: 0, flex: 1 }}>Already have an account? <Link href="/login">Sign In</Link>.</span>
+                        <button onClick={handleSubmit} className={styles.crtbtn}>Create Account</button>
+                      </div>
+                    </div>
+                  </form>
+                </Container>
+              </Col>
+            </Row>
+          </div>
+        </section>
     )
 }
 

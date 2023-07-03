@@ -8,7 +8,7 @@ import { Box, ListSubheader } from '@mui/material';
 export default function SidebarContent() {
 
     return (
-        <Box sx={{pt: 2}}>
+        <Box sx={{pt: 0}}>
             <Toolbar sx={{mb: 1}}>
                 <img src='/logo.svg'/>
             </Toolbar>

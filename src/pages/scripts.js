@@ -1,10 +1,10 @@
 import React from 'react'
 import AppLayout from '../components/Container'
 
-export default function Templates() {
+export default function Documents() {
   return (
     <AppLayout>
-        Templates
+        My Scripts
     </AppLayout>
   )
 }

@@ -1,61 +1,61 @@
-import { AppBar, Avatar, Box, Button, Divider, Toolbar, Typography } from '@mui/material'
-import React from 'react'
-import { FaArrowLeft, FaBell } from 'react-icons/fa'
-import Popper from '@mui/material/Popper';
-import PopupState, { bindToggle, bindPopper } from 'material-ui-popup-state';
-import Fade from '@mui/material/Fade';
-import Paper from '@mui/material/Paper';
-import { useRouter } from 'next/router';
+import { Box } from '@mui/material';
+import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+import { FaCrown } from 'react-icons/fa';
+import Link from 'next/link';
+
+import Search from '../Search/Search';
 
 export default function Appbar({ height, show=true }) {
 
-    const router = useRouter()
-
     return (
-        <Box sx={{ height: height, borderBottom: '1px grey solid' }} className=''>
-            <AppBar elevation={0} component="nav" sx={{ height: height, backgroundColor: 'white', borderBottom: '1px solid #dbdbdb', color: '#131523' }} className=''>
-                <Toolbar>
-                    
-                        {!show && 
-                        <div onClick={()=> router.back()} className='flex mb-4 items-center' style={{ cursor: 'pointer' }}>
-                                <FaArrowLeft className='text-black'/>
-                                <span>Return</span>
-                        </div>}
-                    {/* </Typography> */}
-                    <Box sx={{ display: 'flex', marginLeft: show ? 'auto' : 0, justifyContent: 'space-between' }}>
-                        
-                        {show && <div className='flex items-center' style={{ cursor: 'pointer' }}>
-                            <FaBell className='mr-4 w-6 h-6' />
-                            <PopupState variant="popper" popupId="demo-popup-popper">
-                                {(popupState) => (
-                                    <div>
-                                        <Button sx={{backgroundColor: 'transparent'}} disableRipple={true} variant="text"  {...bindToggle(popupState)}>
-                                            <Avatar sx={{ width: 42 }}>H</Avatar>
-                                        </Button>
-                                        <Popper {...bindPopper(popupState)} transition>
-                                            {({ TransitionProps }) => (
-                                                <Fade {...TransitionProps} timeout={350}>
-                                                    <Paper sx={{backgroundColor: 'white', height: 150,zIndex: 100000, width: 300, paddingLeft: 2}}>
-                                                        <div className='flex self-start items-center pt-2 mb-3'>
-                                                            <Avatar sx={{ width: 56, height: 56 }}>H</Avatar>
-                                                            <div className='ml-1'>
-                                                                <h3 style={{fontWeight: 900}} className='text-black'>Username</h3>
-                                                                <span>Basic plan</span>
-                                                            </div>
-                                                        </div>
-                                                        <Divider/>
-                                                    </Paper>
-                                                </Fade>
-                                            )}
-                                        </Popper>
-                                    </div>
-                                )}
-                            </PopupState>
-                        </div>}
-                    </Box>
-                </Toolbar>
-            </AppBar>
-
+        <Box sx={{ height: height, borderBottom: '0.5px solid #dbdbdb', backgroundColor: 'white' }} className=''>
+            <Container>
+                <Row style={styles.rowStyles}>
+                    <Col className="d-none d-md-block" md="5">
+                        <Search />
+                    </Col>
+                    <Col style={styles.colStyles}>
+                        <button style={styles.upbtn}>
+                            <FaCrown color='orange' size={20} style={{ marginRight: 7 }} />
+                            Upgrade Plan
+                        </button>
+                        <Link href='/scripts/new' type="button" style={styles.crtbtn}>Create New Script</Link>
+                    </Col>
+                </Row>
+            </Container>
         </Box>
     )
+}
+
+const styles = {
+    rowStyles: {
+        height: 60,
+        margin: 0,
+        display: 'flex',
+        alignItems: 'center'
+    },
+    colStyles: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'flex-end'
+    },
+    crtbtn: {
+        background: 'linear-gradient(45deg, #0356e4 45%, #1568f5 100%)',
+        color: 'white',
+        height: 40,
+        marginLeft: 25,
+        padding: 20,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 7,
+        fontSize: 15,
+        textDecoration: 'none'
+    },
+    upbtn: {
+        display: 'flex',
+        alignItems: 'center'
+    }
 }

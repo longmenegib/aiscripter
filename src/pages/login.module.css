@@ -117,16 +117,24 @@
     }
   .crtbtn{
     border: 0px;
-    background-color: #070707;
+    background: linear-gradient(45deg, #0356e4 45%, #1568f5 100%);
     color: white;
     border-radius: 5px;
     padding: 7px 20px;
     cursor: pointer;
     
   }
+  .reverser{
+    flex-direction: row;
+    justify-content: space-between;
+  }
   .crtbtn:hover {
-      opacity: 0.8;
-    }
+    opacity: 0.8;
+  }
+
+  .crtxt{
+    flex: 1;
+  }
 
   @media screen and (max-width: 770px){
     .crtbtn{
